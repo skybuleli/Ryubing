@@ -185,6 +185,8 @@ PublishProfiles/
 # Ignore MacOS Attribute Files
 ._*
 
+# Allow P1 evidence logs (otherwise *.log is ignored)
+!docs/p1-metal/evidence/**/*.log
+!docs/p1-metal/evidence/**/*.trace
+
 # Ignore distribution build files
-distribution/macos/temp/
-distribution/macos/output/

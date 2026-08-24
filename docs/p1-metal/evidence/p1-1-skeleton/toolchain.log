@@ -1,0 +1,15 @@
+# Toolchain verification - P1-1
+slangc: /usr/local/bin/slangc
+Usage: slangc [options...] [--] <input files>
+
+General
+=======
+
+---
+metal-shaderconverter: /usr/local/bin/metal-shaderconverter
+-rwxr-xr-x 1 root wheel 59M Jun  1 08:06 /usr/local/bin/metal-shaderconverter
+-rwxr-xr-x 1 root wheel 58M Jun  1 08:06 /usr/local/lib/libmetalirconverter.dylib
+---
+dotnet SDK: .NET SDK:
+ Version:           10.0.101
+ Commit:            fad253f51b
