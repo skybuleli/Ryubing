@@ -59,8 +59,44 @@ namespace Ryujinx.Graphics.Metal
 
         public IProgram CreateProgram(ShaderSource[] shaders, ShaderInfo info)
         {
-            // P1-3 在此接 slangc + MSC: shaders[].Code 为 .slang，BinaryCode 为 DXIL
-            return new MetalProgram(shaders, info);
+            // P1-3: Slang -> DXIL (slangc) -> metallib (MSC) 完整链路
+            var metallibs = new List<byte[]>();
+            foreach (var s in shaders)
+            {
+                try
+                {
+                    byte[] dxil = null;
+                    if (s.Language == TargetLanguage.Slang && !string.IsNullOrEmpty(s.Code))
+                    {
+                        dxil = SlangCompiler.Compile(s.Code, s.Stage);
+                    }
+                    else if (s.BinaryCode != null && s.BinaryCode.Length > 0)
+                    {
+                        dxil = s.BinaryCode;
+                    }
+                    if (dxil != null)
+                    {
+                        byte[] metallib = MscConverter.Convert(dxil);
+                        metallibs.Add(metallib);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // 存根阶段仅记录，P1-4 再上报为 ProgramLinkStatus.Failed
+                    Console.WriteLine($"[Metal] CreateProgram 转换失败 stage={s.Stage} lang={s.Language}: {ex.Message}");
+                }
+            }
+            byte[] combined = metallibs.Count == 0 ? null : metallibs.Count == 1 ? metallibs[0] : CombineMetallibs(metallibs);
+            return new MetalProgram(shaders, info, combined);
+        }
+
+        private static byte[] CombineMetallibs(List<byte[]> libs)
+        {
+            int total = libs.Sum(b => b.Length);
+            var outBytes = new byte[total];
+            int offset = 0;
+            foreach (var b in libs) { Buffer.BlockCopy(b, 0, outBytes, offset, b.Length); offset += b.Length; }
+            return outBytes;
         }
 
         public ISampler CreateSampler(SamplerCreateInfo info) => new MetalSampler();

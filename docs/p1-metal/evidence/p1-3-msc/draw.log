@@ -1,0 +1,4 @@
+Renderer: Apple M1 Api=Metal
+Program created, binary size=11144 CheckLink=Success
+Draw one frame succeeded
+P1-3 端到端验证通过

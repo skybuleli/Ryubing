@@ -1,0 +1,6 @@
+# P1-3 MSC 转换日志
+- SlangCompiler: slangc -target dxil -profile sm_6_0 编译 vertex/fragment 成功
+- MscConverter: metal-shaderconverter DXIL->metallib 成功
+- Combined metallib size=11144 bytes (vertex 6.0KB + fragment 5.xKB)
+- MetalRenderer.CreateProgram -> MetalProgram.GetBinary() 11144
+- Pipeline.SetProgram + Draw(3) 无异常

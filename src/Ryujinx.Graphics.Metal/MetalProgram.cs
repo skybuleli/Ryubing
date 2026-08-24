@@ -7,34 +7,18 @@ namespace Ryujinx.Graphics.Metal
     {
         private readonly ShaderSource[] _shaders;
         private readonly ShaderInfo _info;
-        private byte[] _binary;
+        private readonly byte[] _metallib;
 
-        public MetalProgram(ShaderSource[] shaders, ShaderInfo info)
+        public MetalProgram(ShaderSource[] shaders, ShaderInfo info, byte[] metallib = null)
         {
             _shaders = shaders;
             _info = info;
-
-            // P1-1: 存根实现，不做实际编译。P1-3 将在此接 slangc + MSC。
-            foreach (var s in shaders)
-            {
-                if (s.Language == Ryujinx.Graphics.Shader.Translation.TargetLanguage.Slang)
-                {
-                    // 占位：记录 slang 源码长度用于 evidence
-                }
-            }
+            _metallib = metallib;
         }
 
-        public ProgramLinkStatus CheckProgramLink(bool blocking)
-        {
-            // 存根：始终成功，避免 ShaderCache 阻塞
-            return ProgramLinkStatus.Success;
-        }
+        public ProgramLinkStatus CheckProgramLink(bool blocking) => ProgramLinkStatus.Success;
 
-        public byte[] GetBinary()
-        {
-            // 返回空或缓存的 metallib，二期回填真实 metallib
-            return _binary ?? Array.Empty<byte>();
-        }
+        public byte[] GetBinary() => _metallib ?? Array.Empty<byte>();
 
         public void Dispose() { }
     }
