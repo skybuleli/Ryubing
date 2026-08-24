@@ -1,0 +1,22 @@
+[
+  {
+    "Hash": "49e2bb7759e9221f",
+    "Stage": "Vertex",
+    "SlangSize": 240,
+    "DxilSize": 2828,
+    "MetallibSize": 5776,
+    "CompileMs": 580,
+    "HitCount": 2,
+    "LastAccess": "2026-08-24T05:35:24.7228610Z"
+  },
+  {
+    "Hash": "43d5c9ffbb172298",
+    "Stage": "Fragment",
+    "SlangSize": 114,
+    "DxilSize": 2676,
+    "MetallibSize": 4848,
+    "CompileMs": 416,
+    "HitCount": 2,
+    "LastAccess": "2026-08-24T05:35:24.7231010Z"
+  }
+]

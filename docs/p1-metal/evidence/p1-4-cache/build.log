@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Spv.Generator -> /Users/liliang/kkdemo/Ryubing/src/Spv.Generator/bin/Release/net10.0/Spv.Generator.dll
+  Ryujinx.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Common/bin/Release/net10.0/Ryujinx.Common.dll
+  Ryujinx.Graphics.Shader -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Shader/bin/Release/net10.0/Ryujinx.Graphics.Shader.dll
+  Ryujinx.Graphics.GAL -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.GAL/bin/Release/net10.0/Ryujinx.Graphics.GAL.dll
+  Ryujinx.Graphics.Metal -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Metal/bin/Release/net10.0/Ryujinx.Graphics.Metal.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.22

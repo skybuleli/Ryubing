@@ -59,12 +59,35 @@ namespace Ryujinx.Graphics.Metal
 
         public IProgram CreateProgram(ShaderSource[] shaders, ShaderInfo info)
         {
-            // P1-3: Slang -> DXIL (slangc) -> metallib (MSC) 完整链路
+            // P1-4: 三级缓存 + 库化: 内存 -> 磁盘 -> 编译
             var metallibs = new List<byte[]>();
             foreach (var s in shaders)
             {
                 try
                 {
+                    string code = s.Code ?? "";
+                    string stageStr = s.Stage.ToString();
+                    string hash = MetalDiskCache.GetHash(code, stageStr);
+
+                    // 1. 内存库化
+                    if (MetalLibraryCache.TryGet(hash, out var cachedLib))
+                    {
+                        MetalLibraryCache.RecordHit();
+                        metallibs.Add(cachedLib);
+                        continue;
+                    }
+                    // 2. 磁盘
+                    if (MetalDiskCache.TryGet(hash, out var diskLib))
+                    {
+                        MetalLibraryCache.Add(hash, diskLib);
+                        MetalLibraryCache.RecordHit();
+                        metallibs.Add(diskLib);
+                        continue;
+                    }
+                    MetalLibraryCache.RecordMiss();
+
+                    // 3. 编译
+                    var sw = System.Diagnostics.Stopwatch.StartNew();
                     byte[] dxil = null;
                     if (s.Language == TargetLanguage.Slang && !string.IsNullOrEmpty(s.Code))
                     {
@@ -77,13 +100,15 @@ namespace Ryujinx.Graphics.Metal
                     if (dxil != null)
                     {
                         byte[] metallib = MscConverter.Convert(dxil);
+                        sw.Stop();
+                        MetalDiskCache.Save(hash, code, dxil, metallib, stageStr, sw.ElapsedMilliseconds);
+                        MetalLibraryCache.Add(hash, metallib);
                         metallibs.Add(metallib);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // 存根阶段仅记录，P1-4 再上报为 ProgramLinkStatus.Failed
-                    Console.WriteLine($"[Metal] CreateProgram 转换失败 stage={s.Stage} lang={s.Language}: {ex.Message}");
+                    Console.WriteLine($"[Metal] CreateProgram 失败 stage={s.Stage} lang={s.Language}: {ex.Message}");
                 }
             }
             byte[] combined = metallibs.Count == 0 ? null : metallibs.Count == 1 ? metallibs[0] : CombineMetallibs(metallibs);

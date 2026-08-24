@@ -7,15 +7,15 @@ namespace Ryujinx.Graphics.Shader.CodeGen.Slang
     {
         public static void DeclareCommon(StringBuilder sb, CodeGenParameters parameters)
         {
-            // P1-2 占位：声明一组通用资源以保证 slangc 能以 sm_6_0 编译。
-            // 后续 P1-3 将按 ResourceManager 精确生成 [[buffer(n)]] 绑定。
-            sb.AppendLine("// Common resources placeholder");
-            sb.AppendLine("cbuffer Constants : register(b0) { float4 cb0[64]; }");
-            sb.AppendLine("cbuffer Constants1 : register(b1) { float4 cb1[64]; }");
-            sb.AppendLine("StructuredBuffer<float4> storage0 : register(t0);");
-            sb.AppendLine("RWStructuredBuffer<float4> storageRW0 : register(u0);");
-            sb.AppendLine("Texture2D tex0 : register(t1); Texture2D tex1 : register(t2);");
-            sb.AppendLine("SamplerState samp0 : register(s0); SamplerState samp1 : register(s1);");
+            // P1-4 定版: buffer(0)=rootTable, buffer(1)=sampler, buffer(2)=perDraw
+            // HLSL 映射: b0/b1 -> buffer(0) 常量表, t0/u0 -> buffer(0) SRV/UAV, t1/t2 -> buffer(0) 纹理, s0/s1 -> buffer(1) 采样器
+            sb.AppendLine("// Common resources - buffer(0)=rootTable b0/b1/t0/u0/t1/t2, buffer(1)=sampler s0/s1, buffer(2)=perDraw");
+            sb.AppendLine("cbuffer RootConstants : register(b0) { float4 cb0[64]; } // buffer(0) rootTable");
+            sb.AppendLine("cbuffer PerDrawConstants : register(b2) { float4 cbPerDraw[16]; } // buffer(2) perDraw");
+            sb.AppendLine("StructuredBuffer<float4> storage0 : register(t0); // buffer(0) SRV");
+            sb.AppendLine("RWStructuredBuffer<float4> storageRW0 : register(u0); // buffer(0) UAV");
+            sb.AppendLine("Texture2D tex0 : register(t1); Texture2D tex1 : register(t2); // buffer(0)");
+            sb.AppendLine("SamplerState samp0 : register(s0); SamplerState samp1 : register(s1); // buffer(1)");
             sb.AppendLine();
         }
     }

@@ -1,0 +1,5 @@
+第一次编译: 1034ms binary=10624 hits=0 misses=2
+第二次命中(内存): 0ms binary=10624 hits=2 misses=2 hitRate=50.0% count=2
+第三次命中(磁盘): 0ms binary=10624 hits=2 misses=0
+Manifest 条目=2 最后CompileMs=416 HitCount=2
+P1-4 缓存验证通过
