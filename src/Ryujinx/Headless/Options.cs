@@ -159,7 +159,7 @@ namespace Ryujinx.Headless
 
             return;
 
-            bool NeedsOverride(string argKey) => originalArgs.None(arg => arg.TrimStart('-').EqualsIgnoreCase(OptionName(argKey)));
+            bool NeedsOverride(string argKey) => originalArgs.None(arg => arg.TrimStart('-').Split('=')[0].EqualsIgnoreCase(OptionName(argKey)));
         }
 
         public void InheritMainConfigInput(string[] originalArgs, ConfigurationState configurationState)
@@ -186,7 +186,7 @@ namespace Ryujinx.Headless
 
             return;
 
-            bool NeedsOverride(string argKey) => originalArgs.None(arg => arg.TrimStart('-').EqualsIgnoreCase(OptionName(argKey)));
+            bool NeedsOverride(string argKey) => originalArgs.None(arg => arg.TrimStart('-').Split('=')[0].EqualsIgnoreCase(OptionName(argKey)));
         }
 
         private static string OptionName(string propertyName) =>

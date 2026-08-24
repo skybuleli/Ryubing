@@ -183,6 +183,7 @@ namespace Ryujinx.Headless
 
         private static IRenderer CreateRenderer(Options options, WindowBase window)
         {
+            Console.WriteLine($"[Metal] CreateRenderer backend={options.GraphicsBackend} window={window?.GetType().Name}");
             if (options.GraphicsBackend == GraphicsBackend.Metal)
             {
                 return new Ryujinx.Graphics.Metal.MetalRenderer();
