@@ -14,6 +14,8 @@ namespace Ryujinx.Graphics.Metal
         private readonly Dictionary<BufferHandle, byte[]> _buffers = new();
         private readonly Dictionary<ulong, byte[]> _syncs = new();
         private ulong _currentSync;
+        private uint _clearColor = 0xFF3366CC; // 默认清色
+        private int _frameWidth = 1280, _frameHeight = 720;
 
         public MetalRenderer()
         {
@@ -231,7 +233,12 @@ namespace Ryujinx.Graphics.Metal
         public void WaitSync(ulong id) { }
         public void Initialize(GraphicsDebugLevel logLevel) { }
         public void SetInterruptAction(Action<Action> interruptAction) { }
-        public void Screenshot() => ScreenCaptured?.Invoke(this, new ScreenCaptureImageInfo(0, 0, true, Array.Empty<byte>(), false, false));
+        public void Screenshot()
+        {
+            var data = MetalContext.GetLastFrameData();
+            var (w, h) = MetalContext.GetFrameSize();
+            ScreenCaptured?.Invoke(this, new ScreenCaptureImageInfo(w, h, true, data, false, false));
+        }
         public void Dispose() { }
 
         private BufferHandle NewHandle()

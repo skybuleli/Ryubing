@@ -1,5 +1,6 @@
 using Ryujinx.Common.Configuration;
 using Ryujinx.Input.HLE;
+using Ryujinx.Graphics.Metal;
 using SDL;
 using static SDL.SDL3;
 
@@ -33,6 +34,6 @@ namespace Ryujinx.Headless
             Device.DisposeGpu();
         }
 
-        protected override void SwapBuffers() { }
+        protected override void SwapBuffers() { var (w, h) = MetalContext.GetFrameSize(); MetalContext.PresentFrame(w, h); }
     }
 }
