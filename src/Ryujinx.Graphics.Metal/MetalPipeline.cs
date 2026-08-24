@@ -19,9 +19,9 @@ namespace Ryujinx.Graphics.Metal
         public void ClearRenderTargetDepthStencil(int layer, int layerCount, float depthValue, bool depthMask, int stencilValue, int stencilMask) { }
         public void CommandBufferBarrier() { }
         public void CopyBuffer(BufferHandle source, BufferHandle destination, int srcOffset, int dstOffset, int size) { }
-        public void DispatchCompute(int groupsX, int groupsY, int groupsZ) { MetalContext.PresentFrame(_width, _height, _clearColor); }
-        public void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) { MetalContext.PresentFrame(_width, _height, _clearColor); }
-        public void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int firstVertex, int firstInstance) { MetalContext.PresentFrame(_width, _height, _clearColor); }
+        public void DispatchCompute(int groupsX, int groupsY, int groupsZ) { MetalContext.PresentFrame(_width, _height, (uint)(0xFF000000 | (groupsX * 37 & 0xFFFFFF))); }
+        public void Draw(int vertexCount, int instanceCount, int firstVertex, int firstInstance) { MetalContext.PresentFrame(_width, _height, (uint)(0xFF000000 | (vertexCount * 123 & 0xFFFFFF))); }
+        public void DrawIndexed(int indexCount, int instanceCount, int firstIndex, int firstVertex, int firstInstance) { MetalContext.PresentFrame(_width, _height, (uint)(0xFF000000 | (indexCount * 71 & 0xFFFFFF))); }
         public void DrawIndexedIndirect(BufferRange indirectBuffer) { }
         public void DrawIndexedIndirectCount(BufferRange indirectBuffer, BufferRange parameterBuffer, int maxDrawCount, int stride) { }
         public void DrawIndirect(BufferRange indirectBuffer) { }

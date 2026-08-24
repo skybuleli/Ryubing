@@ -61,8 +61,16 @@ namespace Ryujinx.Graphics.Metal
                 data[i] = b; data[i+1] = g; data[i+2] = r; data[i+3] = a;
             }
             lock (_lock) { _lastFrameData = data; }
-            // 触发 CommandQueue 创建以验证链路
-            _ = CommandQueue;
+            // 真 Present 链路：CAMetalLayer -> Drawable -> CommandBuffer -> Present
+            nint layer = MetalLayer.GetOrCreate(Device, width, height);
+            nint drawable = MetalLayer.GetDrawable(layer);
+            nint queue = CommandQueue;
+            nint buffer = MetalCommandBuffer.Create(queue);
+            nint encoder = MetalCommandBuffer.CreateRenderEncoder(buffer, nint.Zero);
+            MetalCommandBuffer.EndEncoding(encoder);
+            MetalCommandBuffer.Present(buffer, drawable);
+            MetalCommandBuffer.Commit(buffer);
+            MetalLayer.Present(drawable);
         }
 
         public static byte[] GetLastFrameData()
