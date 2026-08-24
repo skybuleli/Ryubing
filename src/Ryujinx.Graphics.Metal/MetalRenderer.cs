@@ -39,15 +39,18 @@ namespace Ryujinx.Graphics.Metal
             return handle;
         }
 
+        // UMA Shared 零拷：直接引用主机内存，不做 CopyTo
+        private readonly Dictionary<BufferHandle, (nint ptr, int size)> _hostMapped = new();
+
         public BufferHandle CreateBuffer(nint pointer, int size)
         {
             var handle = NewHandle();
-            var data = new byte[size];
-            unsafe { new Span<byte>((void*)pointer, size).CopyTo(data); }
-            _buffers[handle] = data;
+            // Shared 模式：记录指针，GetBufferData 时直返主机内存
+            _hostMapped[handle] = (pointer, size);
+            // 仍分配占位以兼容非 Shared 路径的 GetBufferData 回退
+            _buffers[handle] = Array.Empty<byte>();
             return handle;
         }
-
         public BufferHandle CreateBufferSparse(ReadOnlySpan<BufferRange> storageBuffers)
         {
             // P1-1 存根：按首个 range 大小分配
@@ -129,19 +132,26 @@ namespace Ryujinx.Graphics.Metal
         public ISampler CreateSampler(SamplerCreateInfo info) => new MetalSampler();
         public ITexture CreateTexture(TextureCreateInfo info) => new MetalTexture(info);
 
-        public bool PrepareHostMapping(nint address, ulong size) => false;
+        public bool PrepareHostMapping(nint address, ulong size) => true; // UMA Shared 始终可主机映射
         public void CreateSync(ulong id, bool strict) => _syncs[id] = Array.Empty<byte>();
-        public void DeleteBuffer(BufferHandle buffer) => _buffers.Remove(buffer);
-
-        public PinnedSpan<byte> GetBufferData(BufferHandle buffer, int offset, int size)
+        public void DeleteBuffer(BufferHandle buffer)
         {
+            _buffers.Remove(buffer);
+            _hostMapped.Remove(buffer);
+        }
+
+        public unsafe PinnedSpan<byte> GetBufferData(BufferHandle buffer, int offset, int size)
+        {
+            if (_hostMapped.TryGetValue(buffer, out var hm))
+            {
+                return new PinnedSpan<byte>((void*)(hm.ptr + offset), size, null);
+            }
             if (_buffers.TryGetValue(buffer, out var data))
             {
                 return PinnedSpan<byte>.UnsafeFromSpan(data.AsSpan(offset, size));
             }
             return new PinnedSpan<byte>();
         }
-
         public Capabilities GetCapabilities()
         {
             // UMA 设备，Metal 原生能力。对标 VulkanRenderer 但简化为固定集。
@@ -219,8 +229,13 @@ namespace Ryujinx.Graphics.Metal
             return new MetalProgram(Array.Empty<ShaderSource>(), info);
         }
 
-        public void SetBufferData(BufferHandle buffer, int offset, ReadOnlySpan<byte> data)
+        public unsafe void SetBufferData(BufferHandle buffer, int offset, ReadOnlySpan<byte> data)
         {
+            if (_hostMapped.TryGetValue(buffer, out var hm))
+            {
+                fixed (byte* p = data) { Buffer.MemoryCopy(p, (void*)(hm.ptr + offset), hm.size - offset, data.Length); }
+                return;
+            }
             if (_buffers.TryGetValue(buffer, out var dst))
             {
                 data.CopyTo(dst.AsSpan(offset));

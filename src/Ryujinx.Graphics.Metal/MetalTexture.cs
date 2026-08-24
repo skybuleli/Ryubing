@@ -6,15 +6,12 @@ namespace Ryujinx.Graphics.Metal
     class MetalTexture : ITexture
     {
         private readonly TextureCreateInfo _info;
-        private byte[] _data;
+        private MemoryOwner<byte> _owner;
         private readonly object _lock = new();
 
         public MetalTexture(TextureCreateInfo info)
         {
             _info = info;
-            // 预分配占位，SetData 时按实际大小重分配
-            int size = Math.Max(1, _info.Width) * Math.Max(1, _info.Height) * Math.Max(1, _info.Depth) * Math.Max(1, _info.BytesPerPixel);
-            _data = new byte[size];
         }
 
         public int Width => _info.Width;
@@ -27,29 +24,37 @@ namespace Ryujinx.Graphics.Metal
         public ITexture CreateView(TextureCreateInfo info, int firstLayer, int firstLevel) => new MetalTexture(info);
         public PinnedSpan<byte> GetData()
         {
-            lock (_lock) { return PinnedSpan<byte>.UnsafeFromSpan(_data.AsSpan()); }
+            lock (_lock)
+            {
+                if (_owner.Memory.Length > 0) return PinnedSpan<byte>.UnsafeFromSpan(_owner.Memory.Span);
+                return new PinnedSpan<byte>();
+            }
         }
         public PinnedSpan<byte> GetData(int layer, int level)
         {
-            lock (_lock) { return PinnedSpan<byte>.UnsafeFromSpan(_data.AsSpan()); }
+            lock (_lock)
+            {
+                if (_owner.Memory.Length > 0) return PinnedSpan<byte>.UnsafeFromSpan(_owner.Memory.Span);
+                return new PinnedSpan<byte>();
+            }
         }
         public void SetData(MemoryOwner<byte> data)
         {
-            lock (_lock) { _data = data.Memory.ToArray(); }
-            data.Dispose();
+            lock (_lock) { _owner?.Dispose(); _owner = data; }
         }
         public void SetData(MemoryOwner<byte> data, int layer, int level)
         {
-            lock (_lock) { _data = data.Memory.ToArray(); }
-            data.Dispose();
+            lock (_lock) { _owner?.Dispose(); _owner = data; }
         }
         public void SetData(MemoryOwner<byte> data, int layer, int level, Rectangle<int> region)
         {
-            lock (_lock) { _data = data.Memory.ToArray(); }
-            data.Dispose();
+            lock (_lock) { _owner?.Dispose(); _owner = data; }
         }
         public void SetStorage(BufferRange buffer) { }
-        public void Release() { }
+        public void Release()
+        {
+            lock (_lock) { _owner?.Dispose(); _owner = null; }
+        }
     }
 
     class MetalSampler : ISampler
