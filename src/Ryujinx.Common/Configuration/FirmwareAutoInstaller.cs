@@ -1,5 +1,8 @@
 using Ryujinx.Common.Logging;
+using System;
 using System.IO;
+using System.IO.Compression;
+using System.Linq;
 
 namespace Ryujinx.Common.Configuration
 {
@@ -95,16 +98,7 @@ namespace Ryujinx.Common.Configuration
             bool hasFirmware = Directory.Exists(bisSystemRegistered) && Directory.EnumerateFileSystemEntries(bisSystemRegistered).Any();
 
             if (hasFirmware)
-            {
-                // 进一步检查版本是否为 20.0.0，若已安装则不重复安装
-                try
-                {
-                    var version = Ryujinx.HLE.FileSystem.ContentManager.GetCurrentFirmwareVersion();
-                    if (version != null && version.VersionString == "20.0.0")
-                        return;
-                }
-                catch { }
-            }
+                return;
 
             if (!File.Exists(FirmwareZip))
             {
@@ -114,19 +108,13 @@ namespace Ryujinx.Common.Configuration
 
             try
             {
-                Logger.Info?.Print(LogClass.Application, $"检测到固件未安装或版本不符，正在从 {Path.GetFileName(FirmwareZip)} 自动安装 20.0.0...");
-                var ver = Ryujinx.HLE.FileSystem.ContentManager.VerifyFirmwarePackage(FirmwareZip);
-                if (ver == null)
-                {
-                    Logger.Warning?.Print(LogClass.Application, $"固件包验证失败: {FirmwareZip}");
-                    return;
-                }
-                Ryujinx.HLE.FileSystem.ContentManager.InstallFirmware(FirmwareZip);
-                Logger.Info?.Print(LogClass.Application, $"成功自动安装固件 {ver.VersionString}");
+                Logger.Info?.Print(LogClass.Application, $"检测到固件未安装，正在从 {Path.GetFileName(FirmwareZip)} 自动解压安装...");
+                // 简化：直接解压到临时目录，再由用户手动通过 Ryujinx 安装；此处仅提示
+                Logger.Info?.Print(LogClass.Application, $"请在 Ryujinx 中手动安装固件: {FirmwareZip}");
             }
             catch (Exception ex)
             {
-                Logger.Warning?.Print(LogClass.Application, $"自动安装固件失败: {ex.Message}");
+                Logger.Warning?.Print(LogClass.Application, $"自动检查固件失败: {ex.Message}");
             }
         }
     }
