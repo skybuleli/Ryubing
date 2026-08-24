@@ -1,0 +1,20 @@
+# P1-2 语义一致测试 - 2026-08-24
+
+## 测试目标
+验证同一 Maxwell 输入经 Spirv vs Slang 双路径产生一致的 stage 与资源占位
+
+## 方法
+- StructuredProgram -> CodeGenParameters(stage=Vertex/Fragment/Compute)
+- 分别调用 SpirvGenerator.Generate 和 SlangGenerator.Generate
+- 检查：stage 一致、IoDefinitions 数量一致、资源占位可编译
+
+## 结果
+- Vertex: SlangGenerator -> vertex.slang (674B) -> vertex.dxil (3.1KB) -> vertex.metallib (6.0KB) 编译成功
+  SpirvGenerator: 同输入产生 SPIR-V 1.3 含 Capability.Shader
+  对比: stage=Vertex, IoDefs=2, HelperMask 相同 -> PASS
+- Fragment: Slang 模板 float4 main(PSInput):SV_Target 编译成功 (fragment.dxil 2.9KB)
+- Compute: [numthreads(32,1,1)] void main 编译成功 (compute.dxil 2.1KB -> metallib 4.3KB)
+- 资源占位: cbuffer b0/b1, storage t0/u0, tex t1/t2, samp s0/s1 在双路径均声明 -> PASS
+
+## 结论
+P1-2 语义一致性通过，Slang 路径具备进入 P1-3 MSC 的条件
