@@ -983,6 +983,7 @@ namespace Ryujinx.Ava.Systems
                     ConfigurationState.Instance.Graphics.PreferredGpu,
                     (RendererHost.EmbeddedWindow as EmbeddedWindowVulkan)!.CreateSurface,
                     VulkanHelper.GetRequiredInstanceExtensions),
+                GraphicsBackend.Metal => new Ryujinx.Graphics.Metal.MetalRenderer(),
                 _ => new OpenGLRenderer()
             };
 
@@ -1156,7 +1157,10 @@ namespace Ryujinx.Ava.Systems
                             }
 
                             Device.PresentFrame(() =>
-                                (RendererHost.EmbeddedWindow as EmbeddedWindowOpenGL)?.SwapBuffers());
+                            {
+                                if (RendererHost.Backend == GraphicsBackend.Metal) return;
+                                (RendererHost.EmbeddedWindow as EmbeddedWindowOpenGL)?.SwapBuffers();
+                            });
                         }
 
                         if (_ticks >= _ticksPerFrame)
@@ -1194,6 +1198,7 @@ namespace Ryujinx.Ava.Systems
             {
                 GraphicsBackend.Vulkan => "Vulkan",
                 GraphicsBackend.OpenGl => "OpenGL",
+                GraphicsBackend.Metal => "Metal",
                 _ => throw new NotImplementedException()
             };
 

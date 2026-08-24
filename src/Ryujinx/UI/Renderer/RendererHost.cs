@@ -23,7 +23,7 @@ namespace Ryujinx.Ava.UI.Renderer
             {
                 GraphicsBackend.OpenGl => new EmbeddedWindowOpenGL(),
                 GraphicsBackend.Vulkan => new EmbeddedWindowVulkan(),
-                GraphicsBackend.Metal => new EmbeddedWindowVulkan(),
+                GraphicsBackend.Metal => new EmbeddedWindowMetal(),
                 _ => throw new NotSupportedException()
             };
 
@@ -33,7 +33,8 @@ namespace Ryujinx.Ava.UI.Renderer
         public GraphicsBackend Backend =>
             EmbeddedWindow switch
             {
-                EmbeddedWindowVulkan => ConfigurationState.Instance.Graphics.GraphicsBackend.Value == GraphicsBackend.Metal ? GraphicsBackend.Metal : GraphicsBackend.Vulkan,
+                EmbeddedWindowMetal => GraphicsBackend.Metal,
+                EmbeddedWindowVulkan => GraphicsBackend.Vulkan,
                 EmbeddedWindowOpenGL => GraphicsBackend.OpenGl,
                 _ => throw new NotImplementedException()
             };
