@@ -1,0 +1,13 @@
+#!/bin/sh
+# pre-push: 阻止直接 push 到 master
+remote="$1"
+url="$2"
+while read local_ref local_sha remote_ref remote_sha; do
+  if echo "$remote_ref" | grep -qE "refs/heads/master$"; then
+    # 允许的例外：空？直接 push master 一律阻止，必须走 PR
+    # 检查是否为 --force 推送的保护分支，仍阻止
+    echo "❌ 禁止直接 push 到 master，请走 PR: git push -u origin feat/xxx && Forgejo Create PR"
+    echo "   如确需紧急修复，请在 Forgejo 上临时解除保护"
+    exit 1
+  fi
+done

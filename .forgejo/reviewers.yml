@@ -1,8 +1,10 @@
 cpu:
   - GreemDev
+  - buleli
 
 gpu:
   - GreemDev
+  - buleli
 
 gui:
   - GreemDev
@@ -12,6 +14,18 @@ horizon:
 
 infra:
   - GreemDev
+  - buleli
+
+documentation:
+  - buleli
+
+# P1 Metal 专栏 - 对应 labeler p1-metal / graphics-backend:metal
+p1-metal:
+  - buleli
+
+graphics-backend:metal:
+  - buleli
 
 default:
+  - buleli
   - '@developers'

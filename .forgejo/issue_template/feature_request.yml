@@ -1,0 +1,32 @@
+name: "✨ Feature Request"
+description: "新功能/改进提案"
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "动机"
+      description: "为什么需要，解决什么痛点"
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "方案"
+      placeholder: "涉及模块、接口、是否需新增 TargetApi/TargetLanguage"
+    validations: { required: true }
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "验收标准"
+      placeholder: "可度量的完成条件 (例: VmRSS -15%)"
+    validations: { required: true }
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "自检"
+      options:
+        - label: "已搜索既有提案"
+          required: true
+        - label: "愿认领实现"
+          required: false

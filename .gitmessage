@@ -1,0 +1,9 @@
+# <type>(<scope>): <subject> 50 字符内, 祈使句
+# type: feat|fix|perf|refactor|docs|chore|ci|test
+# scope: cpu|gpu|metal|shader|audio|hle|kernel|gui|infra|p1-metal
+# 例: feat(metal): emit slang from StructuredProgram
+#
+# body: 72 列换行, 解释 why
+#
+# footer: Fix #id / BREAKING CHANGE:
+#

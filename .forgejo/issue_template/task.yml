@@ -1,0 +1,23 @@
+name: "📋 Task"
+description: "技术任务 / infra / docs (P1 非功能性拆解也可用此)"
+title: "[Task] "
+labels: ["infra"]
+body:
+  - type: input
+    id: scope
+    attributes:
+      label: "范围"
+      placeholder: "例: ci / docs/p1-metal / infra"
+    validations: { required: true }
+  - type: textarea
+    id: checklist
+    attributes:
+      label: "Checklist"
+      placeholder: "- [ ] 子项1\n- [ ] 子项2"
+      render: markdown
+    validations: { required: true }
+  - type: input
+    id: eta
+    attributes:
+      label: "预计分支"
+      placeholder: "chore/ci-xxx 或 feat/p1-metal-xxx"

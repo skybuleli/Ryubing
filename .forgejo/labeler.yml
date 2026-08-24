@@ -18,8 +18,15 @@ input:
 - changed-files:
   - any-glob-to-any-file: 'src/Ryujinx.Graphics.OpenGL/**'
 
-'graphics-backend:vulkan':
+'graphics-backend:metal':
 - changed-files:
+  - any-glob-to-any-file: ['src/Ryujinx.Graphics.Metal/**', 'src/Ryujinx.Graphics.Shader/CodeGen/Slang/**']
+
+'p1-metal':
+- changed-files:
+  - any-glob-to-any-file: ['docs/p1-metal/**', 'src/Ryujinx.Graphics.Metal/**', 'src/Ryujinx.Graphics.Shader/CodeGen/Slang/**']
+
+'graphics-backend:vulkan':
   - any-glob-to-any-file: ['src/Ryujinx.Graphics.Vulkan/**', 'src/Spv.Generator/**']
 
 gui:

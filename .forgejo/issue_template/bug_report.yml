@@ -1,0 +1,42 @@
+name: "🐛 Bug Report"
+description: "缺陷报告 - 需复现步骤与日志"
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "先搜索 https://github.com/Ryubing/Issues/issues 是否已存在。本地 Bug 仅限开发/回归。"
+  - type: textarea
+    id: description
+    attributes:
+      label: "问题描述"
+      placeholder: "高层描述，实际 vs 预期"
+    validations: { required: true }
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "最小复现"
+      description: "存档/步骤/最小 homebrew"
+      placeholder: "1. 启动 ... 2. 操作 ... 3. 崩溃"
+    validations: { required: true }
+  - type: input
+    id: environment
+    attributes:
+      label: "环境"
+      placeholder: "OS / CPU / GPU / driver / RAM / Ryubing 版本(hash)"
+    validations: { required: true }
+  - type: textarea
+    id: logs
+    attributes:
+      label: "日志"
+      description: "附 [Executable]/Logs 最新文件，粘贴关键段或上传"
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "自检"
+      options:
+        - label: "已搜索既有 Issue"
+          required: true
+        - label: "已尝试最新 Canary 复现"
+          required: false

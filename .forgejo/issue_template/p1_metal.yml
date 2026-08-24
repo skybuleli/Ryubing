@@ -1,0 +1,35 @@
+name: "🎮 P1 Metal Task"
+description: "P1 Slang->DXIL->MSC 专栏任务，对应 docs/p1-metal/04-PHASE-PLAN"
+title: "[P1-P1.] "
+labels: ["gpu", "graphics-backend:metal", "p1-metal"]
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: "阶段"
+      options: ["P1-1 骨架 (MetalRenderer)", "P1-2 Slang 发射", "P1-3 MSC 打通", "P1-4 缓存/库化", "终验"]
+    validations: { required: true }
+  - type: input
+    id: doc
+    attributes:
+      label: "关联文档"
+      placeholder: "docs/p1-metal/0x-*.md#章节"
+    validations: { required: true }
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "任务 (对应 PHASE-PLAN)"
+      placeholder: "复述该阶段 Entry/Tasks/Exit"
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "证据要求"
+      placeholder: "evidence/p1-*/ 路径 + Instruments 指标"
+    validations: { required: true }
+  - type: input
+    id: branch
+    attributes:
+      label: "分支名"
+      placeholder: "feat/p1-metal-xxx#issueId"
+    validations: { required: true }

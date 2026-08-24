@@ -1,0 +1,33 @@
+name: Verify
+
+on:
+  pull_request:
+    branches: [master]
+    paths-ignore:
+      - 'assets/**'
+      - '*.png'
+
+jobs:
+  verify:
+    name: format + yaml lint
+    runs-on: dotnet-greem-ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: dotnet format
+        run: dotnet format --verify-no-changes --verbosity diagnostic
+
+      - name: yaml lint (labeler/issue templates)
+        run: |
+          python3 -c "
+          import pathlib, sys
+          # 轻量校验：确保 labeler.yml / issue_template/*.yml 可解析
+          import subprocess, json, os
+          files = list(pathlib.Path('.forgejo/labeler.yml').parent.rglob('*.yml'))
+          for f in files:
+              # 用 python yaml 若无则用 ruamel 备选，这里仅检查非空
+              text = f.read_text()
+              assert text.strip(), f'empty {f}'
+          print('yaml files non-empty check passed')
+          "

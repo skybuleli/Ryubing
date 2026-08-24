@@ -1,0 +1,10 @@
+# CODEOWNERS - 自动指派审阅者 (与 reviewers.yml 互补，评审需 2 approvals)
+* @buleli
+src/Ryujinx.Graphics.Metal/** @buleli
+src/Ryujinx.Graphics.Shader/CodeGen/Slang/** @buleli
+docs/p1-metal/** @buleli
+src/ARMeilleure/** @buleli
+src/Ryujinx.Graphics.Gpu/** @buleli
+src/Ryujinx.Graphics.Vulkan/** @buleli
+src/Ryujinx.Graphics.OpenGL/** @buleli
+.forgejo/** @buleli

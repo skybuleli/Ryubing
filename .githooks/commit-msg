@@ -1,0 +1,16 @@
+#!/bin/sh
+# Conventional Commits 校验 - 对应 docs/workflow/git-workflow.md §3
+msg=$(head -n1 "$1" | sed 's/#.*//')
+# 允许 merge/revert 自动提交
+if echo "$msg" | grep -qE "^Merge |^Revert |^fixup! |^squash! "; then
+  exit 0
+fi
+pattern="^(feat|fix|perf|refactor|docs|chore|ci|test)(\([a-z0-9._/-]+\))?(!)?: .{1,50}$"
+if ! echo "$msg" | grep -qE "$pattern"; then
+  echo "❌ commit-msg 校验失败"
+  echo "   期望: <type>(<scope>): <subject>  例: feat(metal): emit slang from StructuredProgram"
+  echo "   type: feat|fix|perf|refactor|docs|chore|ci|test"
+  echo "   实际: $msg"
+  echo "   参见 docs/workflow/git-workflow.md §3"
+  exit 1
+fi
