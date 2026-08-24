@@ -12,10 +12,13 @@ namespace Ryujinx.Graphics.Metal
         public MetalTexture(TextureCreateInfo info)
         {
             _info = info;
-            Console.WriteLine($"[MetalTexture] 创建: {info.Width}x{info.Height} {info.Format} Levels={info.Levels}"); if (info.Width == 1280 && info.Height == 720)
+            Console.WriteLine($"[MetalTexture] 创建: {info.Width}x{info.Height} {info.Format} Levels={info.Levels}");
+            if (info.Width == 1280 && info.Height == 720)
             {
                 Console.WriteLine($"[MetalTexture] 真 MTLTexture 创建试点: {info.Width}x{info.Height} {info.Format} (simplegfx)");
-                // 真 MTLTextureDescriptor 创建将在下一提交补全，此处先以 byte[] 占位保证 GetData 非空
+                nint desc = MetalTextureDescriptor.CreateDescriptor(info.Width, info.Height);
+                nint tex = MetalTextureDescriptor.CreateTexture(MetalContext.Device, desc);
+                Console.WriteLine($"[MetalTexture] MTLTexture 句柄: 0x{tex:X}");
             }
         }
 

@@ -64,6 +64,7 @@ namespace Ryujinx.Graphics.Metal
 
         public IProgram CreateProgram(ShaderSource[] shaders, ShaderInfo info)
         {
+            Console.WriteLine($"[Metal] CreateProgram 调用: shaders={shaders.Length} stages={string.Join(",", shaders.Select(s => s.Stage))}");
             // P1-4: 三级缓存 + 库化: 内存 -> 磁盘 -> 编译
             var metallibs = new List<byte[]>();
             foreach (var s in shaders)
