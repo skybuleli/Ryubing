@@ -257,9 +257,11 @@ namespace Ryujinx.Ava
             // Setup base data directory.
             AppDataManager.Initialize(CommandLineState.BaseDirPathArg);
 
+            // 自动从 Downloads 安装固件 20.0.0 与密钥（若缺失）
+            Ryujinx.Common.Configuration.FirmwareAutoInstaller.EnsureFirmwareAndKeys();
+
             // Initialize the configuration.
             ConfigurationState.Initialize();
-
             // Initialize the logger system.
             LoggerModule.Initialize();
 

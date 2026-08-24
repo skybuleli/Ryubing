@@ -152,6 +152,9 @@ namespace Ryujinx.Headless
 
             AppDataManager.Initialize(option.BaseDataDir);
 
+            // 自动从 Downloads 安装固件 20.0.0 与密钥（若缺失）
+            Ryujinx.Common.Configuration.FirmwareAutoInstaller.EnsureFirmwareAndKeys();
+
             if (useLastUsedProfile && AccountSaveDataManager.GetLastUsedUser().TryGet(out UserProfile profile))
                 option.UserProfile = profile.Name;
 
