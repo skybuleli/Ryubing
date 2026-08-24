@@ -32,4 +32,14 @@ Coding Guidelines
 Project Docs
 =================
 
+## P1 Metal — Slang->DXIL->MSC
+
+- [00 主蓝图与验收](p1-metal/00-MASTER.md)
+- [01 工具链契约](p1-metal/01-TOOLCHAIN.md)
+- [02 架构 GAL与Bridge](p1-metal/02-ARCHITECTURE.md)
+- [03 着色器管线](p1-metal/03-SHADER-PIPELINE.md)
+- [04 分阶段计划](p1-metal/04-PHASE-PLAN.md)
+- [05 验证与验收](p1-metal/05-VERIFICATION.md)
+- [Git 工作流](workflow/git-workflow.md) · [分支保护](workflow/branch-protection.md)
+
 To be added. Many project files will contain basic XML docs for key functions and classes in the meantime.
