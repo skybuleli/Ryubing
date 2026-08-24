@@ -40,6 +40,7 @@ Project Docs
 - [03 着色器管线](p1-metal/03-SHADER-PIPELINE.md)
 - [04 分阶段计划](p1-metal/04-PHASE-PLAN.md)
 - [05 验证与验收](p1-metal/05-VERIFICATION.md)
+- [06 游戏级验证](p1-metal/06-GAME-VALIDATION.md)
 - [Git 工作流](workflow/git-workflow.md) · [分支保护](workflow/branch-protection.md)
 
 To be added. Many project files will contain basic XML docs for key functions and classes in the meantime.

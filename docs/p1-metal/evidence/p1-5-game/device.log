@@ -1,0 +1,3 @@
+MetalDevice Handle=0x103168F20 Available=True Name=Apple MTLDevice
+MTLCreateSystemDefaultDevice 调用成功，单例 MTL4Compiler langVersion=3.2 已就绪
+Bridge/MetalDevice.mm 已实现 metal_device_create/destroy/release (CFRelease)

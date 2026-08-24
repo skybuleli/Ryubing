@@ -1,0 +1,6 @@
+# P1-5 游戏级验证 - 准备阶段
+- GraphicsBackend 新增 Metal 枚举，Headless --graphics-backend metal 可解析
+- RendererHost 已支持 Metal (复用 VulkanWindow 的 CAMetalLayer)
+- Ryujinx.csproj 已引用 Ryujinx.Graphics.Metal
+- MetalDevice 真设备句柄 0x103168F20 验证通过
+- 下一步：准备 Homebrew 2048.nro，执行 ./Ryujinx --game 2048.nro --graphics-backend metal --headless --frames 600
