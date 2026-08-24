@@ -5,5 +5,6 @@ namespace Ryujinx.Graphics.Shader.Translation
         Glsl,
         Spirv,
         Arb,
+        Slang,
     }
 }
