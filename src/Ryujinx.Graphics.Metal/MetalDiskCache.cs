@@ -20,27 +20,35 @@ namespace Ryujinx.Graphics.Metal
             return Convert.ToHexString(hash)[..16].ToLowerInvariant();
         }
 
-        public static bool TryGet(string hash, out byte[] metallib)
+        public static bool TryGet(string hash, out MetalCompiledShader shader)
         {
-            string path = Path.Combine(BaseDir, $"{hash}.metallib");
-            if (File.Exists(path))
+            string metallibPath = Path.Combine(BaseDir, $"{hash}.metallib");
+            string reflectionPath = Path.Combine(BaseDir, $"{hash}.reflection.json");
+            if (File.Exists(metallibPath))
             {
-                metallib = File.ReadAllBytes(path);
+                string reflection = File.Exists(reflectionPath)
+                    ? File.ReadAllText(reflectionPath)
+                    : string.Empty;
+                shader = new MetalCompiledShader(File.ReadAllBytes(metallibPath), reflection);
                 UpdateHit(hash);
                 return true;
             }
-            metallib = null;
+            shader = null;
             return false;
         }
 
-        public static void Save(string hash, string slang, byte[] dxil, byte[] metallib, string stage, long elapsedMs)
+        public static void Save(string hash, string slang, byte[] dxil, MetalCompiledShader shader, string stage, long elapsedMs)
         {
             lock (_lock)
             {
                 Directory.CreateDirectory(BaseDir);
                 File.WriteAllText(Path.Combine(BaseDir, $"{hash}.slang"), slang);
                 if (dxil != null) File.WriteAllBytes(Path.Combine(BaseDir, $"{hash}.dxil"), dxil);
-                File.WriteAllBytes(Path.Combine(BaseDir, $"{hash}.metallib"), metallib);
+                if (shader?.Metallib != null) File.WriteAllBytes(Path.Combine(BaseDir, $"{hash}.metallib"), shader.Metallib);
+                if (!string.IsNullOrEmpty(shader?.ReflectionJson))
+                {
+                    File.WriteAllText(Path.Combine(BaseDir, $"{hash}.reflection.json"), shader.ReflectionJson);
+                }
 
                 var manifest = LoadManifest();
                 var entry = manifest.FirstOrDefault(e => e.Hash == hash);
@@ -51,7 +59,7 @@ namespace Ryujinx.Graphics.Metal
                 }
                 entry.SlangSize = slang.Length;
                 entry.DxilSize = dxil?.Length ?? 0;
-                entry.MetallibSize = metallib.Length;
+                entry.MetallibSize = shader?.Metallib?.Length ?? 0;
                 entry.CompileMs = elapsedMs;
                 entry.HitCount++;
                 entry.LastAccess = DateTime.UtcNow.ToString("o");

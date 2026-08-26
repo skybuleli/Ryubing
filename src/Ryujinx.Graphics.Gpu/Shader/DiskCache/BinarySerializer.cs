@@ -34,7 +34,13 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
             Span<byte> buffer = MemoryMarshal.Cast<T, byte>(MemoryMarshal.CreateSpan(ref data, 1));
             for (int offset = 0; offset < buffer.Length;)
             {
-                offset += _activeStream.Read(buffer[offset..]);
+                int readSize = _activeStream.Read(buffer[offset..]);
+                if (readSize <= 0)
+                {
+                    throw new EndOfStreamException("Truncated shader cache data while reading a structure.");
+                }
+
+                offset += readSize;
             }
         }
 
@@ -201,7 +207,17 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
                     stream = new DeflateStream(stream, CompressionMode.Decompress, true);
                     for (int offset = 0; offset < data.Length;)
                     {
-                        offset += stream.Read(data[offset..]);
+                        int readSize = stream.Read(data[offset..]);
+                        if (readSize <= 0)
+                        {
+                            // 缓存被截断/损坏时，解压流提前结束。若不加保护，read 会持续返回 0，
+                            // offset 永远到不了 data.Length，导致进入死循环卡死着色器缓存加载。
+                            // 这里抛出异常让上层走入缓存重建路径，而不是无限自旋。
+                            stream.Dispose();
+                            throw new EndOfStreamException("Truncated compressed shader cache data.");
+                        }
+
+                        offset += readSize;
                     }
 
                     stream.Dispose();
@@ -210,7 +226,14 @@ namespace Ryujinx.Graphics.Gpu.Shader.DiskCache
                     stream = new BrotliStream(stream, CompressionMode.Decompress, true);
                     for (int offset = 0; offset < data.Length;)
                     {
-                        offset += stream.Read(data[offset..]);
+                        int readSize = stream.Read(data[offset..]);
+                        if (readSize <= 0)
+                        {
+                            stream.Dispose();
+                            throw new EndOfStreamException("Truncated compressed shader cache data.");
+                        }
+
+                        offset += readSize;
                     }
 
                     stream.Dispose();

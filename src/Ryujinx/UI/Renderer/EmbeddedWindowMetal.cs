@@ -6,11 +6,16 @@ namespace Ryujinx.Ava.UI.Renderer
     {
         public nint GetMetalLayer() => MetalLayer;
 
-        public void PresentMetal()
+        public override void OnWindowCreated()
         {
-            // 真 Present 由 MetalContext 驱动，此处仅占位
-            var (w, h) = MetalContext.GetFrameSize();
-            MetalContext.PresentFrame(w, h);
+            base.OnWindowCreated();
+            MetalContext.Initialize(MetalLayer, NsView);
+        }
+
+        protected override void OnWindowDestroying()
+        {
+            MetalContext.Initialize(nint.Zero);
+            base.OnWindowDestroying();
         }
     }
 }

@@ -1,16 +1,18 @@
 using System.Collections.Concurrent;
+using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace Ryujinx.Graphics.Metal
 {
-    // 内存库化缓存: 按 hash 聚合 metallib，复用 MTLLibrary
+    // 内存库化缓存: 按 hash 聚合编译产物（metallib + MSC reflection），复用编译结果
     public static class MetalLibraryCache
     {
-        private static readonly ConcurrentDictionary<string, byte[]> _cache = new();
+        private static readonly ConcurrentDictionary<string, MetalCompiledShader> _cache = new();
         private static long _hits, _misses;
 
-        public static bool TryGet(string hash, out byte[] metallib) => _cache.TryGetValue(hash, out metallib);
+        public static bool TryGet(string hash, out MetalCompiledShader shader) => _cache.TryGetValue(hash, out shader);
 
-        public static void Add(string hash, byte[] metallib) => _cache[hash] = metallib;
+        public static void Add(string hash, MetalCompiledShader shader) => _cache[hash] = shader;
 
         public static void RecordHit() => Interlocked.Increment(ref _hits);
         public static void RecordMiss() => Interlocked.Increment(ref _misses);

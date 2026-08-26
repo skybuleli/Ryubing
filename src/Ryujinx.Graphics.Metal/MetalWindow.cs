@@ -7,7 +7,24 @@ namespace Ryujinx.Graphics.Metal
     {
         public void Present(ITexture texture, ImageCrop crop, Action swapBuffersCallback)
         {
-            // P1-1 存根：仅回调，不做实际 present。P1-3 接 MTLDrawable present.
+            bool trace = Environment.GetEnvironmentVariable("RYUJINX_METAL_TRACE_PRESENT") == "1";
+            if (trace)
+            {
+                Console.WriteLine($"[Metal][Present] called texture={texture?.GetType().Name ?? "null"}");
+            }
+
+            if (texture is MetalTexture metalTexture && MetalContext.PresentTexture(metalTexture, crop))
+            {
+                swapBuffersCallback?.Invoke();
+                return;
+            }
+
+            if (trace)
+            {
+                Console.WriteLine("[Metal][Present] fallback callback");
+            }
+
+            // 无可用 Metal 纹理时保留 callback，供 headless/降级路径继续工作。
             swapBuffersCallback?.Invoke();
         }
 

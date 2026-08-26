@@ -983,7 +983,8 @@ namespace Ryujinx.Ava.Systems
                     ConfigurationState.Instance.Graphics.PreferredGpu,
                     (RendererHost.EmbeddedWindow as EmbeddedWindowVulkan)!.CreateSurface,
                     VulkanHelper.GetRequiredInstanceExtensions),
-                GraphicsBackend.Metal => new Ryujinx.Graphics.Metal.MetalRenderer(),
+                GraphicsBackend.Metal => new Ryujinx.Graphics.Metal.MetalRenderer(
+                    (RendererHost.EmbeddedWindow as EmbeddedWindowMetal)?.GetMetalLayer() ?? nint.Zero),
                 _ => new OpenGLRenderer()
             };
 

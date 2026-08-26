@@ -6,6 +6,7 @@ using Ryujinx.Ava.Utilities;
 using Ryujinx.Common.Configuration;
 using Ryujinx.Common.Helper;
 using Ryujinx.Common.Logging;
+using Ryujinx.Graphics.Metal;
 using Ryujinx.Graphics.RenderDocApi;
 using Ryujinx.HLE;
 using SPB.Graphics;
@@ -254,6 +255,11 @@ namespace Ryujinx.Ava.UI.Renderer
             nint nsView = child.ObjPtr;
             MetalLayer = metalLayer.ObjPtr;
             NsView = nsView;
+
+            if (this is EmbeddedWindowMetal)
+            {
+                MetalContext.Initialize(MetalLayer, NsView);
+            }
 
             return new PlatformHandle(nsView, "NSView");
         }

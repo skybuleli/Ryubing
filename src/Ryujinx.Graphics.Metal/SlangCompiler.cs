@@ -12,8 +12,16 @@ namespace Ryujinx.Graphics.Metal
             Directory.CreateDirectory(tmpDir);
             try
             {
-                string slangPath = Path.Combine(tmpDir, $"shader.slang");
-                string dxilPath = Path.Combine(tmpDir, $"shader.dxil");
+                string slangPath = Path.Combine(tmpDir, "shader.slang");
+                string dxilPath = Path.Combine(tmpDir, "shader.dxil");
+
+                string dumpPath = Environment.GetEnvironmentVariable("RYUJINX_METAL_SHADER_DUMP_PATH");
+                if (!string.IsNullOrWhiteSpace(dumpPath))
+                {
+                    Directory.CreateDirectory(dumpPath);
+                    File.WriteAllText(Path.Combine(dumpPath, $"{stage}-{Guid.NewGuid():N}.slang"), slangSource);
+                }
+
                 File.WriteAllText(slangPath, slangSource);
 
                 var psi = new ProcessStartInfo("slangc", $"\"{slangPath}\" -target dxil -entry main -stage {stageArg} -profile sm_6_0 -o \"{dxilPath}\"")
