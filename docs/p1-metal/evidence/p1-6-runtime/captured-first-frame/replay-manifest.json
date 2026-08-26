@@ -1,0 +1,74 @@
+{
+  "format": "ryujinx-metal-celeste-replay-v1",
+  "provenance": "Captured Celeste guest shader binaries; resource values are a deterministic replay fixture because no live Celeste resource capture is available yet.",
+  "shaderPair": {
+    "vertexBinary": "../celeste-dump/Dumps01/Full/Shader0001.bin",
+    "fragmentBinary": "../celeste-dump/Dumps01/Full/Shader0002.bin",
+    "vertexSource": "../celeste-slang-source-captured/Shader0001-Vertex.slang",
+    "fragmentSource": "../celeste-slang-source-captured/Shader0002-Fragment.slang"
+  },
+  "renderTarget": {
+    "width": 64,
+    "height": 64,
+    "format": "B8G8R8A8Unorm",
+    "clearRgba": [ 0, 0, 0, 255 ]
+  },
+  "vertexInput": {
+    "count": 3,
+    "stride": 48,
+    "attributes": [
+      { "location": 0, "offset": 0, "format": "R32G32B32A32Float" },
+      { "location": 1, "offset": 16, "format": "R32G32B32A32Float" },
+      { "location": 2, "offset": 32, "format": "R32G32B32A32Float" }
+    ],
+    "data": [
+      -0.75, -0.75, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1,
+       0.75, -0.75, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1,
+       0, 0.75, 0, 1, 1, 1, 1, 1, 0.5, 1, 0, 1
+    ]
+  },
+  "buffers": [
+    { "stage": "Vertex", "type": "UniformBuffer", "binding": 0, "size": 1024 },
+    {
+      "stage": "Vertex",
+      "type": "UniformBuffer",
+      "binding": 3,
+      "size": 65536,
+      "floatWrites": [
+        { "offset": 0, "value": 1 },
+        { "offset": 20, "value": 1 },
+        { "offset": 40, "value": 1 },
+        { "offset": 60, "value": 1 }
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "stage": "Fragment",
+      "type": "TextureAndSampler",
+      "binding": 0,
+      "width": 2,
+      "height": 2,
+      "format": "B8G8R8A8Unorm",
+      "data": [
+        255, 255, 255, 255,
+        255, 255, 255, 255,
+        255, 255, 255, 255,
+        255, 255, 255, 255
+      ],
+      "sampler": {
+        "minFilter": "Nearest",
+        "magFilter": "Nearest",
+        "addressU": "ClampToEdge",
+        "addressV": "ClampToEdge",
+        "addressP": "ClampToEdge"
+      }
+    }
+  ],
+  "acceptance": {
+    "minimumColoredPixels": 1,
+    "centerBgraAtLeast": [ 200, 200, 200, 200 ],
+    "gpuCompletionRequired": true,
+    "commandBufferErrorRequired": false
+  }
+}

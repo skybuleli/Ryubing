@@ -1,0 +1,33 @@
+
+=== vertex (vertex) ===
+slangc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/vertex.dxil: data
+-rw-r--r--@ 1 liliang  staff   3.1K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/vertex.dxil
+msc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/vertex.metallib: MetalLib executable (MacOS), version 1.2.7
+-rw-r--r--@ 1 liliang  staff   6.0K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/vertex.metallib
+
+=== vertex2 (vertex) ===
+slangc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/vertex2.dxil: data
+-rw-r--r--@ 1 liliang  staff   2.8K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/vertex2.dxil
+msc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/vertex2.metallib: MetalLib executable (MacOS), version 1.2.7
+-rw-r--r--@ 1 liliang  staff   5.6K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/vertex2.metallib
+
+=== compute (compute) ===
+slangc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/compute.dxil: data
+-rw-r--r--@ 1 liliang  staff   2.0K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/compute.dxil
+msc_exit=0
+docs/p1-metal/evidence/p1-6-runtime/compute.metallib: MetalLib executable (MacOS), version 1.2.7
+-rw-r--r--@ 1 liliang  staff   4.2K Aug 24 17:23 docs/p1-metal/evidence/p1-6-runtime/compute.metallib
+
+=== fragment (fragment) ===
+error[E38000]: no function found matching entry point name 'main'
+ --> docs/p1-metal/evidence/p1-2-slang/slang-dump/fragment2.slang:4:1
+  |
+4 | cbuffer Constants : register(b0) { float4 cb0[64]; }
+  | ^^^^^^^ no function found matching entry point name 'main'
+--'
+slangc_exit=255

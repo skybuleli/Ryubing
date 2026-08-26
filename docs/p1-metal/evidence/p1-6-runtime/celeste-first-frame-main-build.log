@@ -1,0 +1,56 @@
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5f2m-466j-3848
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1902: Package 'System.Private.Uri' 4.3.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc
+  Ryujinx.Graphics.RenderDocApi -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.RenderDocApi/bin/Release/net10.0/Ryujinx.Graphics.RenderDocApi.dll
+  Ryujinx.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Common/bin/Release/net10.0/Ryujinx.Common.dll
+  Spv.Generator -> /Users/liliang/kkdemo/Ryubing/src/Spv.Generator/bin/Release/net10.0/Spv.Generator.dll
+  Ryujinx.Graphics.Video -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Video/bin/Release/net10.0/Ryujinx.Graphics.Video.dll
+  Ryujinx.Graphics.Texture -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Texture/bin/Release/net10.0/Ryujinx.Graphics.Texture.dll
+  Ryujinx.Memory -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Memory/bin/Release/net10.0/Ryujinx.Memory.dll
+  Ryujinx.SDL3.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.SDL3.Common/bin/Release/net10.0/Ryujinx.SDL3.Common.dll
+  Ryujinx.Graphics.Nvdec.FFmpeg -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec.FFmpeg/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.FFmpeg.dll
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5f2m-466j-3848
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1902: Package 'System.Private.Uri' 4.3.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc
+  Ryujinx.Graphics.Shader -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Shader/bin/Release/net10.0/Ryujinx.Graphics.Shader.dll
+  Ryujinx.Graphics.Nvdec.Vp9 -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec.Vp9/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.Vp9.dll
+  Ryujinx.Graphics.GAL -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.GAL/bin/Release/net10.0/Ryujinx.Graphics.GAL.dll
+  Ryujinx.Graphics.Metal -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Metal/bin/Release/net10.0/Ryujinx.Graphics.Metal.dll
+  ARMeilleure -> /Users/liliang/kkdemo/Ryubing/src/ARMeilleure/bin/Release/net10.0/ARMeilleure.dll
+  Ryujinx.Horizon.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Common/bin/Release/net10.0/Ryujinx.Horizon.Common.dll
+  Ryujinx.Graphics.Device -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Device/bin/Release/net10.0/Ryujinx.Graphics.Device.dll
+  Ryujinx.Graphics.Host1x -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Host1x/bin/Release/net10.0/Ryujinx.Graphics.Host1x.dll
+  Ryujinx.Graphics.OpenGL -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.OpenGL/bin/Release/net10.0/Ryujinx.Graphics.OpenGL.dll
+  Ryujinx.Cpu -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Cpu/bin/Release/net10.0/Ryujinx.Cpu.dll
+  Ryujinx.Graphics.Vic -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Vic/bin/Release/net10.0/Ryujinx.Graphics.Vic.dll
+  Ryujinx.Audio -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio/bin/Release/net10.0/Ryujinx.Audio.dll
+  Ryujinx.Graphics.Gpu -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Gpu/bin/Release/net10.0/Ryujinx.Graphics.Gpu.dll
+  Ryujinx.Graphics.Nvdec -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.dll
+  Ryujinx.Audio.Backends.Apple -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.Apple/bin/Release/net10.0/Ryujinx.Audio.Backends.Apple.dll
+  Ryujinx.Audio.Backends.SDL3 -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SDL3/bin/Release/net10.0/Ryujinx.Audio.Backends.SDL3.dll
+  Ryujinx.Audio.Backends.SoundIo -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/bin/Release/net10.0/Ryujinx.Audio.Backends.SoundIo.dll
+  Ryujinx.Horizon.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Generators/bin/Release/netstandard2.0/Ryujinx.Horizon.Generators.dll
+  Ryujinx.Graphics.Vulkan -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Vulkan/bin/Release/net10.0/Ryujinx.Graphics.Vulkan.dll
+  Ryujinx.Audio.Backends.OpenAL -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.OpenAL/bin/Release/net10.0/Ryujinx.Audio.Backends.OpenAL.dll
+  Ryujinx.Horizon -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon/bin/Release/net10.0/Ryujinx.Horizon.dll
+  Ryujinx.HLE.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.HLE.Generators/bin/Release/netstandard2.0/Ryujinx.HLE.Generators.dll
+  Ryujinx.Horizon.Kernel.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Kernel.Generators/bin/Release/netstandard2.0/Ryujinx.Horizon.Kernel.Generators.dll
+  Ryujinx.HLE -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.HLE/bin/Release/net10.0/Ryujinx.HLE.dll
+  Ryujinx.Input -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Input/bin/Release/net10.0/Ryujinx.Input.dll
+  Ryujinx.Input.SDL3 -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Input.SDL3/bin/Release/net10.0/Ryujinx.Input.SDL3.dll
+  Ryujinx.UI.LocaleGenerator -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.UI.LocaleGenerator/bin/Release/netstandard2.0/Ryujinx.UI.LocaleGenerator.dll
+  Ryujinx -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx/bin/Release/net10.0/Ryujinx.dll
+  /Users/liliang/kkdemo/Ryubing/src/Ryujinx/bin/Release/net10.0/Ryujinx: replacing existing signature
+
+Build succeeded.
+
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5f2m-466j-3848
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1902: Package 'System.Private.Uri' 4.3.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx/Ryujinx.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5f2m-466j-3848
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1902: Package 'System.Private.Uri' 4.3.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio.Backends.SoundIo/Ryujinx.Audio.Backends.SoundIo.csproj : warning NU1903: Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc
+    6 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:25.76

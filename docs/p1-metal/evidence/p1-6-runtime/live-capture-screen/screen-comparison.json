@@ -1,0 +1,53 @@
+{
+  "capturedAtUtc": "2026-08-24T14:38:33.131456Z",
+  "windowId": 28952,
+  "screen": {
+    "width": 2560,
+    "height": 1576,
+    "format": "CGImage provider bytes (bitmap order reported by CoreGraphics provider)"
+  },
+  "drawable": {
+    "width": 1920,
+    "height": 1080
+  },
+  "source": {
+    "width": 1920,
+    "height": 1080,
+    "format": "R8G8B8A8Unorm"
+  },
+  "copiedSourceRect": {
+    "x": 0,
+    "y": 0,
+    "width": 1920,
+    "height": 1080
+  },
+  "match": {
+    "scale": 1.3333333333333333,
+    "offsetX": 0,
+    "offsetY": 132,
+    "channelOrder": "R,G,B,A"
+  },
+  "comparison": {
+    "sourceToDrawable": {
+      "comparedPixels": 2073600,
+      "comparedBytes": 8294400,
+      "mismatchedPixels": 0,
+      "mismatchedBytes": 0,
+      "identical": true
+    },
+    "drawableToScreen": {
+      "comparedPixels": 2073600,
+      "comparedBytes": 8294400,
+      "mismatchedPixels": 67625,
+      "mismatchedBytes": 183068,
+      "identical": false
+    },
+    "sourceToScreen": {
+      "comparedPixels": 2073600,
+      "comparedBytes": 8294400,
+      "mismatchedPixels": 67625,
+      "mismatchedBytes": 183068,
+      "identical": false
+    }
+  }
+}

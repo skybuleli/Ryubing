@@ -1,0 +1,62 @@
+  Ryujinx.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Common/bin/Release/net10.0/Ryujinx.Common.dll
+  Ryujinx.Tests.Unicorn -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests.Unicorn/bin/Release/net10.0/Ryujinx.Tests.Unicorn.dll
+  Spv.Generator -> /Users/liliang/kkdemo/Ryubing/src/Spv.Generator/bin/Release/net10.0/Spv.Generator.dll
+  Ryujinx.Graphics.Video -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Video/bin/Release/net10.0/Ryujinx.Graphics.Video.dll
+  Ryujinx.Memory -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Memory/bin/Release/net10.0/Ryujinx.Memory.dll
+  Ryujinx.Graphics.Texture -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Texture/bin/Release/net10.0/Ryujinx.Graphics.Texture.dll
+  Ryujinx.Graphics.Nvdec.FFmpeg -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec.FFmpeg/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.FFmpeg.dll
+  Ryujinx.Graphics.Nvdec.Vp9 -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec.Vp9/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.Vp9.dll
+  Ryujinx.Graphics.Shader -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Shader/bin/Release/net10.0/Ryujinx.Graphics.Shader.dll
+  Ryujinx.Graphics.GAL -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.GAL/bin/Release/net10.0/Ryujinx.Graphics.GAL.dll
+  ARMeilleure -> /Users/liliang/kkdemo/Ryubing/src/ARMeilleure/bin/Release/net10.0/ARMeilleure.dll
+  Ryujinx.Graphics.Device -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Device/bin/Release/net10.0/Ryujinx.Graphics.Device.dll
+  Ryujinx.Tests.Memory -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests.Memory/bin/Release/net10.0/Ryujinx.Tests.Memory.dll
+  Ryujinx.Horizon.Common -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Common/bin/Release/net10.0/Ryujinx.Horizon.Common.dll
+  Ryujinx.Graphics.Host1x -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Host1x/bin/Release/net10.0/Ryujinx.Graphics.Host1x.dll
+  Ryujinx.Cpu -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Cpu/bin/Release/net10.0/Ryujinx.Cpu.dll
+  Ryujinx.Graphics.Vic -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Vic/bin/Release/net10.0/Ryujinx.Graphics.Vic.dll
+  Ryujinx.Graphics.Metal -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Metal/bin/Release/net10.0/Ryujinx.Graphics.Metal.dll
+  Ryujinx.Graphics.Nvdec -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Nvdec/bin/Release/net10.0/Ryujinx.Graphics.Nvdec.dll
+  Ryujinx.Audio -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Audio/bin/Release/net10.0/Ryujinx.Audio.dll
+  Ryujinx.Graphics.Gpu -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Graphics.Gpu/bin/Release/net10.0/Ryujinx.Graphics.Gpu.dll
+  Ryujinx.Horizon.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Generators/bin/Release/netstandard2.0/Ryujinx.Horizon.Generators.dll
+  Ryujinx.Horizon -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon/bin/Release/net10.0/Ryujinx.Horizon.dll
+  Ryujinx.Horizon.Kernel.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Horizon.Kernel.Generators/bin/Release/netstandard2.0/Ryujinx.Horizon.Kernel.Generators.dll
+  Ryujinx.HLE.Generators -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.HLE.Generators/bin/Release/netstandard2.0/Ryujinx.HLE.Generators.dll
+  Ryujinx.HLE -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.HLE/bin/Release/net10.0/Ryujinx.HLE.dll
+  Ryujinx.Tests -> /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests/bin/Release/net10.0/Ryujinx.Tests.dll
+Test run for /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests/bin/Release/net10.0/Ryujinx.Tests.dll (.NETCoreApp,Version=v10.0)
+VSTest version 18.0.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+/Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests/bin/Release/net10.0/Ryujinx.Tests.dll
+NUnit Adapter 4.6.0.0: Test execution started
+Running selected tests in /Users/liliang/kkdemo/Ryubing/src/Ryujinx.Tests/bin/Release/net10.0/Ryujinx.Tests.dll
+   NUnit3TestExecutor discovered 1 of 1 NUnit test cases using Current Discovery mode, Non-Explicit run
+2026-08-24 18:06:14.696 dotnet[51495:8941503] Metal API Validation Enabled
+[MetalTexture] 创建: 64x64 B8G8R8A8Unorm Levels=1 texture=0x9DB590500
+[Metal] CreateProgram 调用: shaders=2 stages=Vertex,Fragment
+[Metal][PSO] MTLLibrary 创建成功: 5776B handle=0x1053695A0
+[Metal][PSO] MTLLibrary 创建成功: 4728B handle=0x105376D10
+[Metal][PSO] RenderPipeline 创建成功: handle=0x10538B2F0
+[MetalProgram] PSO 状态=Success pipeline=0x10538B2F0 shaders=2
+[Metal][PSO] RenderPipeline 创建成功: handle=0x10538C0F0
+
+NUnit Adapter 4.6.0.0: Test execution complete
+  Passed CreatesMetalPipelineFromSlangSources [438 ms]
+  Standard Output Messages:
+ [MetalTexture] 创建: 64x64 B8G8R8A8Unorm Levels=1 texture=0x9DB590500
+ [Metal] CreateProgram 调用: shaders=2 stages=Vertex,Fragment
+ [Metal][PSO] MTLLibrary 创建成功: 5776B handle=0x1053695A0
+ [Metal][PSO] MTLLibrary 创建成功: 4728B handle=0x105376D10
+ [Metal][PSO] RenderPipeline 创建成功: handle=0x10538B2F0
+ [MetalProgram] PSO 状态=Success pipeline=0x10538B2F0 shaders=2
+ [Metal][PSO] RenderPipeline 创建成功: handle=0x10538C0F0
+
+
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 11.7016 Seconds

@@ -1,0 +1,96 @@
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:164:33
+    |
+164 | temp_24 = temp_20 + data[0].w;
+    |                             ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:160:33
+    |
+160 | temp_23 = temp_19 + data[1].w;
+    |                             ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:156:33
+    |
+156 | temp_22 = temp_18 + data[2].w;
+    |                             ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:154:33
+    |
+154 | temp_21 = temp_17 + data[3].w;
+    |                             ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:152:35
+    |
+152 | temp_20 = fma(temp_2, data[0].z, temp_16);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:150:35
+    |
+150 | temp_19 = fma(temp_2, data[1].z, temp_15);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:148:35
+    |
+148 | temp_18 = fma(temp_2, data[2].z, temp_14);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:146:35
+    |
+146 | temp_17 = fma(temp_2, data[3].z, temp_13);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:142:35
+    |
+142 | temp_16 = fma(temp_1, data[0].y, temp_12);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:138:35
+    |
+138 | temp_15 = fma(temp_1, data[1].y, temp_11);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:134:35
+    |
+134 | temp_14 = fma(temp_1, data[2].y, temp_9);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:130:35
+    |
+130 | temp_13 = fma(temp_1, data[3].y, temp_7);
+    |                               ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:126:32
+    |
+126 | temp_12 = temp_0 * data[0].x;
+    |                            ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:122:32
+    |
+122 | temp_11 = temp_0 * data[1].x;
+    |                            ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:118:31
+    |
+118 | temp_9 = temp_0 * data[2].x;
+    |                           ^ use of uninitialized global variable 'data'
+----'
+warning[E41017]: use of uninitialized global variable
+   --> docs/p1-metal/evidence/p1-6-runtime/celeste-slang-source-fixed/Vertex-9c650b4cbf5c4dae8fe7e578cd13a7ad.slang:114:31
+    |
+114 | temp_7 = temp_0 * data[3].x;
+    |                           ^ use of uninitialized global variable 'data'
+----'

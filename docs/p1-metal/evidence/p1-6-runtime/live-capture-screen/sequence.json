@@ -1,0 +1,13 @@
+{
+  "format": "ryujinx-metal-capture-sequence-v1",
+  "drawCount": 1,
+  "draws": [
+    {
+      "drawIndex": 1,
+      "manifest": "draw-0001.json",
+      "replayManifest": "replay-manifest.json",
+      "framebufferFile": "framebuffer-0001.bgra8.bin",
+      "gpuCompleted": true
+    }
+  ]
+}

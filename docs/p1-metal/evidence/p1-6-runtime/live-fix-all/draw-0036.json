@@ -1,0 +1,619 @@
+{
+  "format": "ryujinx-metal-live-capture-v1",
+  "capturedAtUtc": "2026-08-24T12:47:09.986383Z",
+  "drawIndex": 36,
+  "replayManifest": "replay-manifest-0036.json",
+  "gpuCompleted": true,
+  "shaderSources": [
+    {
+      "stage": "Vertex",
+      "language": "Slang",
+      "sourceFile": "draw-0036-Vertex-0.slang",
+      "reflectionFile": "draw-0036-Vertex-0.reflection.json"
+    },
+    {
+      "stage": "Fragment",
+      "language": "Slang",
+      "sourceFile": "draw-0036-Fragment-1.slang",
+      "reflectionFile": "draw-0036-Fragment-1.reflection.json"
+    }
+  ],
+  "buffers": [
+    {
+      "type": "VertexBuffer",
+      "binding": 0,
+      "indexType": null,
+      "offset": 0,
+      "size": 48000,
+      "file": "draw-0036-VertexBuffer-b0.bin"
+    },
+    {
+      "type": "UniformBuffer",
+      "binding": 1,
+      "indexType": null,
+      "offset": 0,
+      "size": 256,
+      "file": "draw-0036-UniformBuffer-b1.bin"
+    },
+    {
+      "type": "IndexBuffer",
+      "binding": -1,
+      "indexType": "UShort",
+      "offset": 7416,
+      "size": 12,
+      "file": "draw-0036-IndexBuffer.bin"
+    }
+  ],
+  "textures": [
+    {
+      "stage": "Fragment",
+      "type": "Texture",
+      "binding": 0,
+      "width": 1922,
+      "height": 1082,
+      "format": "R8G8B8A8Unorm",
+      "levels": 1,
+      "resourceId": 36,
+      "file": "draw-0036-Fragment-Texture-b0.bin",
+      "arrayBinding": null,
+      "arrayIndex": null,
+      "sampler": {
+        "minFilter": "Linear",
+        "magFilter": "Linear",
+        "addressU": "Repeat",
+        "addressV": "Repeat",
+        "addressP": "Repeat",
+        "minLod": 0,
+        "maxLod": 15,
+        "mipLodBias": 0,
+        "maxAnisotropy": 1,
+        "resourceId": 29
+      }
+    }
+  ],
+  "sequence": {
+    "drawCount": 36,
+    "firstDraw": false,
+    "captureAllDraws": true
+  },
+  "renderTarget": {
+    "width": 1920,
+    "height": 1080,
+    "format": "R8G8B8A8Unorm",
+    "framebufferFile": "framebuffer-0036.bgra8.bin",
+    "referenceFramebuffer": null,
+    "comparedFramebufferBytes": 0,
+    "mismatchedFramebufferBytes": -1,
+    "depthStencil": {
+      "width": 1920,
+      "height": 1080,
+      "format": "D24UnormS8Uint",
+      "file": "depth-stencil-0036.bin"
+    }
+  },
+  "draw": {
+    "indexed": true,
+    "vertexCount": 6,
+    "instanceCount": 1,
+    "firstVertex": 616,
+    "firstInstance": 0,
+    "firstIndex": 0,
+    "indexType": "UShort",
+    "topology": "Triangles",
+    "vertexAttributes": [
+      {
+        "index": 0,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": false,
+        "format": "R32G32B32Float"
+      },
+      {
+        "index": 1,
+        "bufferIndex": 0,
+        "offset": 12,
+        "isZero": false,
+        "format": "R8G8B8A8Unorm"
+      },
+      {
+        "index": 2,
+        "bufferIndex": 0,
+        "offset": 16,
+        "isZero": false,
+        "format": "R32G32Float"
+      },
+      {
+        "index": 3,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 4,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 5,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 6,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 7,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 8,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 9,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 10,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 11,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 12,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 13,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 14,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 15,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      }
+    ],
+    "viewports": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      }
+    ],
+    "scissors": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      }
+    ],
+    "vertexBuffers": [
+      {
+        "index": 0,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 48000,
+        "stride": 24,
+        "divisor": 0
+      },
+      {
+        "index": 1,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 2,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 3,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 4,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 5,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 6,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 7,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 8,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 9,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 10,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 11,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 12,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 13,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 14,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 15,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      }
+    ],
+    "indexBuffer": {
+      "handle": "BufferHandle { }",
+      "offset": 7416,
+      "size": 12
+    },
+    "depthTest": {
+      "enable": false,
+      "writeEnable": true,
+      "function": "LessOrEqual"
+    },
+    "stencilTest": {
+      "enable": false,
+      "frontFunction": "Never",
+      "backFunction": "Never"
+    },
+    "blend": {
+      "enable": true,
+      "colorOperation": "Add",
+      "colorSourceFactor": "SrcAlpha",
+      "colorDestinationFactor": "One",
+      "alphaOperation": "Add",
+      "alphaSourceFactor": "SrcAlpha",
+      "alphaDestinationFactor": "One"
+    },
+    "colorWriteMask": 15,
+    "cullEnable": true,
+    "cullMode": "Back",
+    "frontFace": "Clockwise",
+    "depthClamp": false,
+    "rasterizerDiscard": false,
+    "polygonMode": {
+      "front": "Fill",
+      "back": "Fill"
+    },
+    "multisample": {
+      "alphaToCoverage": false,
+      "alphaToOne": false,
+      "alphaToCoverageDither": false
+    },
+    "logicOp": {
+      "enable": false,
+      "operation": "Copy"
+    }
+  }
+}

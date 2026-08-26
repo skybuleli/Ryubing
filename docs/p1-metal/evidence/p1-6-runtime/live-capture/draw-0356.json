@@ -1,0 +1,615 @@
+{
+  "format": "ryujinx-metal-live-capture-v1",
+  "capturedAtUtc": "2026-08-24T14:19:06.358372Z",
+  "drawIndex": 356,
+  "replayManifest": "replay-manifest-0356.json",
+  "gpuCompleted": true,
+  "captureMode": "metadata-only",
+  "shaderSources": [],
+  "resourceSummary": {
+    "uniformBuffers": 2,
+    "storageBuffers": 0,
+    "textures": 1,
+    "images": 0,
+    "textureArrayBindings": 0,
+    "imageArrayBindings": 0,
+    "hasDepthAttachment": true,
+    "hasStencilAttachment": true
+  },
+  "buffers": [
+    {
+      "type": "VertexBuffer",
+      "binding": 0,
+      "offset": 0,
+      "size": 48000,
+      "stride": 24,
+      "divisor": 0
+    },
+    {
+      "type": "UniformBuffer",
+      "binding": 1,
+      "offset": 0,
+      "size": 256
+    },
+    {
+      "type": "UniformBuffer",
+      "binding": 0,
+      "offset": 0,
+      "size": 1392
+    },
+    {
+      "type": "IndexBuffer",
+      "binding": -1,
+      "indexType": "UShort",
+      "offset": 7608,
+      "size": 24
+    }
+  ],
+  "textures": [
+    {
+      "stage": "Fragment",
+      "type": "Texture",
+      "binding": 0,
+      "width": 4096,
+      "height": 4096,
+      "format": "R8G8B8A8Unorm",
+      "levels": 1,
+      "resourceId": 36,
+      "arrayBinding": null,
+      "arrayIndex": null,
+      "sampler": {
+        "minFilter": "Linear",
+        "magFilter": "Linear",
+        "addressU": "ClampToEdge",
+        "addressV": "ClampToEdge",
+        "addressP": "ClampToEdge",
+        "resourceId": 30
+      }
+    }
+  ],
+  "sequence": {
+    "drawCount": 356,
+    "firstDraw": false,
+    "captureAllDraws": true
+  },
+  "renderTarget": {
+    "width": 1920,
+    "height": 1080,
+    "format": "R8G8B8A8Unorm",
+    "framebufferFile": null,
+    "referenceFramebuffer": null,
+    "comparedFramebufferBytes": 0,
+    "mismatchedFramebufferBytes": -1,
+    "depthStencil": {
+      "width": 1920,
+      "height": 1080,
+      "format": "D24UnormS8Uint",
+      "file": null
+    }
+  },
+  "draw": {
+    "indexed": true,
+    "vertexCount": 12,
+    "instanceCount": 1,
+    "firstVertex": 1900,
+    "firstInstance": 0,
+    "firstIndex": 0,
+    "indexType": "UShort",
+    "topology": "Triangles",
+    "vertexAttributes": [
+      {
+        "index": 0,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": false,
+        "format": "R32G32B32Float"
+      },
+      {
+        "index": 1,
+        "bufferIndex": 0,
+        "offset": 12,
+        "isZero": false,
+        "format": "R8G8B8A8Unorm"
+      },
+      {
+        "index": 2,
+        "bufferIndex": 0,
+        "offset": 16,
+        "isZero": false,
+        "format": "R32G32Float"
+      },
+      {
+        "index": 3,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 4,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 5,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 6,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 7,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 8,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 9,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 10,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 11,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 12,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 13,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 14,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      },
+      {
+        "index": 15,
+        "bufferIndex": 0,
+        "offset": 0,
+        "isZero": true,
+        "format": "R32Float"
+      }
+    ],
+    "viewports": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "depthNear": 0,
+        "depthFar": 1
+      }
+    ],
+    "scissors": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 65535,
+        "height": 65535
+      }
+    ],
+    "vertexBuffers": [
+      {
+        "index": 0,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 48000,
+        "stride": 24,
+        "divisor": 0
+      },
+      {
+        "index": 1,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 2,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 3,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 4,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 5,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 6,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 7,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 8,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 9,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 10,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 11,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 12,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 13,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 14,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      },
+      {
+        "index": 15,
+        "handle": "BufferHandle { }",
+        "offset": 0,
+        "size": 0,
+        "stride": 0,
+        "divisor": 0
+      }
+    ],
+    "indexBuffer": {
+      "handle": "BufferHandle { }",
+      "offset": 7608,
+      "size": 24
+    },
+    "depthTest": {
+      "enable": true,
+      "writeEnable": true,
+      "function": "LessOrEqual"
+    },
+    "stencilTest": {
+      "enable": false,
+      "frontFunction": "Never",
+      "backFunction": "Never"
+    },
+    "blend": {
+      "enable": true,
+      "colorOperation": "Add",
+      "colorSourceFactor": "One",
+      "colorDestinationFactor": "OneMinusSrcAlpha",
+      "alphaOperation": "Add",
+      "alphaSourceFactor": "One",
+      "alphaDestinationFactor": "OneMinusSrcAlpha"
+    },
+    "colorWriteMask": 15,
+    "cullEnable": false,
+    "cullMode": "Back",
+    "frontFace": "Clockwise",
+    "depthClamp": false,
+    "rasterizerDiscard": false,
+    "polygonMode": {
+      "front": "Fill",
+      "back": "Fill"
+    },
+    "multisample": {
+      "alphaToCoverage": false,
+      "alphaToOne": false,
+      "alphaToCoverageDither": false
+    },
+    "logicOp": {
+      "enable": false,
+      "operation": "Clear"
+    }
+  }
+}
